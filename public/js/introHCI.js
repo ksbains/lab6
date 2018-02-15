@@ -30,22 +30,27 @@ function addProjectDetails(e) {
 
 function loadProject(id) {
 	console.log("inside of loadProject");
-	let url = "/project/:" + id;
+	let url = "/project/" + id;
 	console.log("the URL is: ", url);
-	let detailID = "detailproject" + id;
+	
 	console.log("the ID is: ", id);
-	var html = "";
+	
 
-	$.get(url,function (data, status){
-		console.log("this is the data ", data);
-		let img = `<img src="` +data.image+ `">`;
-		let h1 = `<h1>` + data.titile + `</h1>`;
-		let h2 = `<h2>` +data.date + `</h2>`;
-		let summary = data.summary;
-		html = img + h1 + h2 + summary;
-	});
-
-	console.log("this is the html, ", html);
-	$(detailID).html(html);
+	$.get(url, callback);
 
 }
+
+function callback(data, status){
+		console.log("this is the data ", data);
+		
+		let img = `<img src="` +data.image+ `">`;
+		let h1 = `<h1>` + data.title + `</h1>`;
+		let h2 = `<h2>` +data.date + `</h2>`;
+		let summary = data.summary;
+		let html = img + h1 + h2 + summary;
+		let detailID = "#detailproject" + data.id;
+		$(detailID).html(html)
+		console.log("this is the html, ", html);
+
+
+	}
