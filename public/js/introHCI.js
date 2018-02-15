@@ -10,8 +10,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$('.project a').click(addProjectDetails);
-
-	$('#colorBtn').click(randomizeColors);
+	// $('#colorBtn').click(randomizeColors);
 }
 
 /*
