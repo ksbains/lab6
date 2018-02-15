@@ -1,15 +1,13 @@
-<!-- Replace all code under this line with your copied script -->
+
 <script>
+  console.log("the facebook partials are loaded");
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '145123966166502',
-      cookie     : true,
       xfbml      : true,
-      version    : 'v2.8'
+      version    : 'v2.12'
     });
-      
-    FB.AppEvents.logPageView();   
-      
+    FB.AppEvents.logPageView();
   };
 
   (function(d, s, id){

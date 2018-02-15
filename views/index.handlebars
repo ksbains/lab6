@@ -19,27 +19,6 @@
 </head>
 
 <body>
-	<script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '145123966166502',
-	      cookie     : true,
-	      xfbml      : true,
-	      version    : 'v2.8'
-	    });
-	      
-	    FB.AppEvents.logPageView();   
-	      
-	  };
-
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "https://connect.facebook.net/en_US/sdk.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	</script>
 	<div class="container">
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
@@ -54,7 +33,7 @@
 
 		<div id="facebookPhoto" class="profile">
 			<h3>Profile Photo</h3>
-			<img id="photo" class='img-responsive' src="http://hci.stanford.edu/courses/cs547/Resources/Pictures/klemmer_grad.jpg" />
+			<img id="photo" class='img-responsive' src="https://hci.stanford.edu/courses/cs547/Resources/Pictures/klemmer_grad.jpg" />
 		</div>
 
 		<h3>Projects</h3>
@@ -64,19 +43,19 @@
 		{{#each projects}}
 		<div class="project" id="{{id}}">
 			<div class="thumbnail">
-				<a href="#">
+				<a href="#{{id}}">
 					<img src="images/{{image}}" alt="Lorem Pixel image" class="img">
 					<p>{{name}}</p>
 				</a>
-				<div class="details"></div>
+				<div id="detail{{id}}" class="details"></div>
 			</div>
 		</div>
 		{{/each}}
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/introHCI.js"></script>
 	{{> facebook}}
+	<script src="/js/introHCI.js"></script>
 	<script src="/js/facebook.js"></script>
 
 </body>

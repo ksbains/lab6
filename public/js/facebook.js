@@ -1,10 +1,9 @@
-
-
 /*
  * Function that is called when the document is ready.
  */
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
+    console.log("we are in the checkLoginState");
     statusChangeCallback(response);
   });
 }
@@ -27,5 +26,5 @@ function changeUser(response){
   console.log("this is the response in the changeUser function ", response);
   $('#profileName').text(response.name);
   $(".facebookLogin").hide();
-  $('#photo').attr("src", "response.picture.data.url");
+  $('#photo').attr("src", response.picture.data.url);
 }
